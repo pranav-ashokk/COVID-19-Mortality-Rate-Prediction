@@ -1,6 +1,14 @@
-// Call on the function importCOVIDData with specified parameters
+// Call on the function import data function with the current date as parameter
 function callFunction(){
-  importCOVIDData(2020, 4, 25, 2020, 4, 28);
+  // Get the current date 
+  current_date = new Date()
+  cmonth = current_date.getMonth() + 1
+  cdate = current_date.getDate()
+  cyear = current_date.getFullYear()
+  
+  //importCOVIDData(cyear, cmonth, cdate, cyear, cmonth, cdate);
+  importCOVIDData(cyear, cmonth, cdate, cyear, cmonth, cdate);
+
 }
 
 // Input years as 4-digit integers, months as integers in the range 1-12 and dates as integers in the range 1-31
