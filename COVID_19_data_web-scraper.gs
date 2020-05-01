@@ -64,6 +64,12 @@ function importCOVIDData(startYear, startMonth, startDate, endYear, endMonth, en
       date = 1;
     }
     
-    else{date++;}    
+    else{date++;}
+    
+    // Move sheet to folder
+    var folder = DriveApp.getFolderById('covid_19_data_auto_sync');
+    var document = DriveApp.getFileById(ssnew.getId());
+    
+    folder.addFile(document);
 }
 }
