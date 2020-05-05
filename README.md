@@ -109,4 +109,5 @@ I trained these algorithms using various different learning rates (alpha levels)
 
 ## RESOURCES
 [1] Supervised learning data from COVID-19 daily data reports posted on https://worldometers.info/coronavirus/
+
 [2] COVID-19 daily testing data from https://ourworldindata.org/grapher/full-list-covid-19-tests-per-day
