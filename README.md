@@ -39,28 +39,12 @@ I built and evaluated 4 different regression algorithms:
   
 I trained these algorithms using various different learning rates (alpha levels) and evaluated them using different success measurements (mean squared error, explained variance score, r^2, and mean absolute error)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 **NOTE: This project is not necessarily meant for others to use as a reliable resource/reference, but rather for my own understanding and apprehension of machine learning modelling and detailed statistical analysis. **
 
 ## CHANGE LOG
-[1] 04/18/20 ~ Created 'COVID-19 Data Web Scraper.gs'
-				* Google script file that creates google sheets files containing COVID-19 data from worldometers (see RESOURCES[1])
-				* Goes through archived website data to retrieve data from a range of hard-coded dates (see RESOURCES[1a])
+	[1] 04/18/20 ~ Created 'COVID-19 Data Web Scraper.gs'
+				- Google script file that creates google sheets files containing COVID-19 data from worldometers (see RESOURCES[1])
+				- Goes through archived website data to retrieve data from a range of hard-coded dates (see RESOURCES[1a])
 
 		04/22/20 ~ Abstraction of the function
 				- I realized that hard-coding dates and allowing a limited range of months makes it difficult for me to reuse the program when updating my data or for future purposes
@@ -122,8 +106,6 @@ I trained these algorithms using various different learning rates (alpha levels)
 	[5] 05/03/20 ~ Created 'auto_sync_data.sh'
 				- This small bash script uses rclone to locally download the datasets extracted by 'COVID-19 Data Web Scraper.gs'
 				- I added a UNIX cron job to this script to run every day at 11:00 pm since the datasets are extracted into my Google Drive everyday at 10:00 pm
-
-
 
 ## RESOURCES
 [1] Supervised learning data from COVID-19 daily data reports posted on https://worldometers.info/coronavirus/
