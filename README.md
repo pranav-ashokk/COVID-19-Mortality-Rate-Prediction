@@ -1,5 +1,5 @@
 # COVID-19 Models and Analysis
-This project aims to provide detailed statistical analysis and create accurate predictive models of the COVID-19 outbreak. The primary predictive model is a model that predicts the number of deaths caused by COVID-19 in the U.S. 
+This project aims to provide detailed statistical analysis and create accurate predictive models of the COVID-19 outbreak. The primary predictive model is a regression model that predicts the number of deaths caused by COVID-19 in the U.S. 
 
 This project was created using Python (in Jupyter Notebooks), JavaScript (in Google Scripts), and Bash (in text editor).
 
@@ -11,7 +11,7 @@ Pandemics of respiratory disease follow a somewhat predictable progression that 
 First comes the *investigation* phase, and then the *recognition*, *initiation*, and *acceleration* phases. At the end of the acceleration phase, the pandemic is at its peak. After the peak occurs, there will be a decrease in illnesses. This decrease occurs during the final phase: the *deceleration* phase. Different countries (or parts of the same country) can be in different phases of the pandemic at any point in time.
 
 ## 1) Collecting Data
-Predicting the number of cases or deaths caused by COVID-19 is a regression problem that requires supervised learning. Data regarding COVID-19 has been publicly available since mid-January of 2020 (see [RESOURCES [1]](#resources)). This data is used as the basis to create the regression models on the outbreak. 
+Predicting the number of cases or deaths caused by COVID-19 is a regression problem that requires supervised learning. Data regarding COVID-19 has been publicly available since mid-January of 2020[^1]. This data is used as the basis to create the regression models on the outbreak. I am using 6 attributes/features to create the hypothesis function.
 
 
 
@@ -27,5 +27,7 @@ Predicting the number of cases or deaths caused by COVID-19 is a regression prob
 
 
 
-## RESOURCES
+
 This project is not necessarily meant for others to use as a reliable resource/reference, but rather for my own understanding and apprehension of machine learning modelling and detailed statistical analysis. 
+
+[^1]: Supervised learning data from COVID-19 daily data reports posted on https://worldometers.info/coronavirus/
