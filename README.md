@@ -1,7 +1,7 @@
 # COVID-19 Models and Analysis
 This project aims to provide detailed statistical analysis and create accurate predictive models of the COVID-19 outbreak. The primary predictive model is a regression model that predicts the number of deaths caused by COVID-19 in the U.S. 
 
-This project was created using Python (in Jupyter Notebooks), JavaScript (in Google Scripts), and Bash (in text editor).
+This project was created using Python (in Jupyter Notebook), JavaScript (in Google Scripts), and Bash (in text editor).
 
 ## Background
 COVID-19 (Coronavirus Disease) is an infectious respiratory disease caused by a novel coronavirus. The first outbreak of COVID-19 occured in Wuhan, China in December of 2019. Since then, the outbreak has been characterized as a pandemic by the WHO and the disease has been spreading easily and sustainably in communities all around the world. 
@@ -24,12 +24,12 @@ I am using 5 attributes/features to create the hypothesis function used to predi
 I created a web scraper program for Google Sheets (see [CHANGE LOG \[1\]](#change-log)) to automatically extract website data and download it locally. This automatic extraction occurs every day using a timed trigger, bash script (see [CHANGE LOG \[5\]](#change-log)), and a cron job on the script. Then, I created a bash script to convert the XLSX files to CSV files (see [CHANGE LOG \[2\]](#change-log)).
 
 ## 2) Preparing the Dataset
-I combined all the CSV files and organized them in chronological order. Then, I cleaned the data and took care of missing values. I wrote a Python script (see [CHANGE LOG \[2\]](#change-log)) to handle the data cleaning process and create the final dataset that contains all the data I need in one CSV file. 
+I combined all the CSV files and organized them in chronological order. Then, I cleaned the data and took care of missing values. I created a Jupyter Notebook, written in Python, (see [CHANGE LOG \[3\]](#change-log)) to handle the data cleaning process and create the final dataset that contains all the data I need in one CSV file. 
 
 I used standardization (converting to z-scores) to scale the features, since this makes it easier for the learning algorithm to learn the weights of the parameters. This also increases the chance of gradient descent converging and converging faster.
 
 ## 3) Evaluating Algorithms
-I evaluated the model using 10-Fold Cross-Validation (k-Fold CV) since I have a small dataset (less than 100 rows as of now). I decided not to shuffle the data since the model must evaluate on the specified chronological order of the data. I also decided to split the dataset into two (train and test) without having a separate holdout set since I am testing and modifying the model constantly with new data coming in every day.
+I evaluated the model using 10-Fold Cross-Validation (k-Fold CV) since I have a small dataset (less than 100 rows as of now). I decided not to shuffle the data since the model must evaluate on the specified chronological order of the data. I also decided to split the dataset into two (train and test) without having a separate holdout set since I am testing and modifying the model constantly with new data coming in every day. I created a Jupyter Notebook, written in Python, to first visualize the data, then evaluate various algorithms to find the best regression model for the dataset (see [CHANGE LOG \[4\]](#change-log)).
 
 I built and evaluated 4 different regression algorithms:
   1. Lasso (LAS)
@@ -61,14 +61,14 @@ I trained these algorithms using various different learning rates (alpha levels)
 				- Linux bash script that converts a user-specified directory of XLSX files into CSV files and places them in a different user-specified directory
 
 	[3] 04/22/20 ~ Created 'create_dataset.pynb'
-				- I used Jupyter Notebook to write the python notebook script
-				- This notebook script organizes all the data into one dataframe, filling in missing values accordingly
+				- I used a Jupyter Notebook written in Python
+				- This notebook organizes all the data into one dataframe, filling in missing values accordingly
 
 	    04/24/20 ~ Separate datasets for each country
 				- This is a major change in the project as I decided to split country data into separate datasets
 				- This way, there is much less data to handle and sort through and produces a much cleaner result
 				- I decided to begin with USA and created 'create_USA_dataset.pynb'
-					- This script creates a dataset for USA by:
+					- This Jupyter Notebook creates a dataset for USA by:
 
 					0) Importing necessary packages/libraries and creating useful functions for convenient use 
 					1) Combining CSV data for USA
@@ -86,12 +86,12 @@ I trained these algorithms using various different learning rates (alpha levels)
 				- This essentially allows the model to use today's stats to predict tommorow's deaths
 				- I also dropped the 'Total Deaths' (as of that day) column since the two death columns may be linearly dependent
 
-	    04/30/20 ~ Modified script to create an additional CSV file containing raw data
-				- The script now creates a CSV file before adding the "Total Deaths Tomorrow" column and before feature scaling occurs
-				- This allows me to create more meaningful visualizations of the data in the train/test script with proper scales
+	    04/30/20 ~ Modified notebook to create an additional CSV file containing raw data
+				- The notebook now creates a CSV file before adding the "Total Deaths Tomorrow" column and before feature scaling occurs
+				- This allows me to create more meaningful visualizations of the data in the train/test ntebook with proper scales
 
 	[4] 04/29/20 ~ Created 'train_test_USA_dataset.pynb'
-				- I created another python notebook script on Jupyter Notebook to visualize the data, split the data, evaluate 4 different models and choose the best model for this situation
+				- I created another Jupyter Notebook (in Python) to visualize the data, split the data, evaluate 4 different models and choose the best model for this situation
 				- This is accomplished by:
 
 					0) Importing necessary packages/libraries and creating useful functions for convenient use 
@@ -109,5 +109,7 @@ I trained these algorithms using various different learning rates (alpha levels)
 
 ## RESOURCES
 [1] Supervised learning data from COVID-19 daily data reports posted on https://worldometers.info/coronavirus/
+
+[1a] I used https://web.archive.org to retrieve data posted from worldometers on previous dates
 
 [2] COVID-19 daily testing data from https://ourworldindata.org/grapher/full-list-covid-19-tests-per-day
