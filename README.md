@@ -46,13 +46,13 @@ I trained these algorithms using various different learning rates (alpha levels)
 				- Google script file that creates google sheets files containing COVID-19 data from worldometers (see RESOURCES[1])
 				- Goes through archived website data to retrieve data from a range of hard-coded dates (see RESOURCES[1a])
 
-		04/22/20 ~ Abstraction of the function
+	    04/22/20 ~ Abstraction of the function
 				- I realized that hard-coding dates and allowing a limited range of months makes it difficult for me to reuse the program when updating my data or for future purposes
 				- Added parameters for start month/date and end month/date
 				- Allowed access to parse over years of website data
 				!!Possibly add another parameter for URL and allow the program to be able to parse over any website's data using wayback machine (SEE RESOURCES[1a])
 
-		05/03/20 ~ Automation of data extraction
+	    05/03/20 ~ Automation of data extraction
 				- I found it becoming a hassle to run this script manually every time I wanted to update the data
 				- So, I added a timed trigger to run the script every day at 10:00 pm
 				- It now uses the in-built javascript Date function for use in the extraction function's parameters 
@@ -64,7 +64,7 @@ I trained these algorithms using various different learning rates (alpha levels)
 				- I used Jupyter Notebook to write the python notebook script
 				- This notebook script organizes all the data into one dataframe, filling in missing values accordingly
 
-		04/24/20 ~ Separate datasets for each country
+	    04/24/20 ~ Separate datasets for each country
 				- This is a major change in the project as I decided to split country data into separate datasets
 				- This way, there is much less data to handle and sort through and produces a much cleaner result
 				- I decided to begin with USA and created 'create_USA_dataset.pynb'
@@ -78,15 +78,15 @@ I trained these algorithms using various different learning rates (alpha levels)
 					5) Scaling features so that gradient descent will converge (and faster)
 					6) Exporting final dataset as CSV file
 
-		04/28/20 ~ Added an update function
+	    04/28/20 ~ Added an update function
 				- I added an update function that adds new data to the existing dataframe
 				- The function does most of the formatting and cleaning of data itself, but sometimes requires manual assistance as data can sometimes be very messy
 
-		04/29/20 ~ Added a column to the dataset called "Total Deaths Tomorrow"
+	    04/29/20 ~ Added a column to the dataset called "Total Deaths Tomorrow"
 				- This essentially allows the model to use today's stats to predict tommorow's deaths
 				- I also dropped the 'Total Deaths' (as of that day) column since the two death columns may be linearly dependent
 
-		04/30/20 ~ Modified script to create an additional CSV file containing raw data
+	    04/30/20 ~ Modified script to create an additional CSV file containing raw data
 				- The script now creates a CSV file before adding the "Total Deaths Tomorrow" column and before feature scaling occurs
 				- This allows me to create more meaningful visualizations of the data in the train/test script with proper scales
 
@@ -99,7 +99,7 @@ I trained these algorithms using various different learning rates (alpha levels)
 					2) Visualizing data trends and gaining insight into correlation
 					3) Training and testing dataset on various models
 
-		04/30/20 ~ Added an additional method of evaluating the different models
+	    04/30/20 ~ Added an additional method of evaluating the different models
 				- I simply trained and tested the models on the dataset with different success measurements rather than just one (mean squared error, explained variance score, r^2, and mean 					absolute error)
 				- I realized that the ridge regression model seemed to have the best success when using only mean squared error because the goal of the model itself is to minimize the mean 					squared error
 
