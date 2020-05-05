@@ -30,5 +30,5 @@ Predicting the number of cases or deaths caused by COVID-19 is a regression prob
 
 This project is not necessarily meant for others to use as a reliable resource/reference, but rather for my own understanding and apprehension of machine learning modelling and detailed statistical analysis. 
 
-##RESOURCES
+## RESOURCES
 [1] Supervised learning data from COVID-19 daily data reports posted on https://worldometers.info/coronavirus/
